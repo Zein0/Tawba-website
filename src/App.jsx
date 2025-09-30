@@ -6,7 +6,7 @@ const TAG_OPTIONS = [
   { value: 'feature-request', label: 'Feature request' },
 ];
 
-export default function App() {
+function App() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -72,7 +72,7 @@ export default function App() {
         <p className="card__subtitle">
           Share as many details as possible so we can respond quickly and effectively.
         </p>
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit} noValidate>
           <label className="field">
             <span className="field__label">Name</span>
             <input
@@ -141,3 +141,5 @@ function getTagLabel(value) {
   const match = TAG_OPTIONS.find((option) => option.value === value);
   return match ? match.label : value;
 }
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
