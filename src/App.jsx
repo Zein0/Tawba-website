@@ -1,4 +1,4 @@
-const { useMemo, useState } = React;
+import React, { useMemo, useState } from 'https://esm.sh/react@18.2.0';
 
 const TAG_OPTIONS = [
   { value: 'general-issue', label: 'General issue' },
@@ -141,6 +141,5 @@ function getTagLabel(value) {
   const match = TAG_OPTIONS.find((option) => option.value === value);
   return match ? match.label : value;
 }
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
